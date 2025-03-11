@@ -17,6 +17,7 @@ struct ContentView: View {
                 Text(isConvertMode ? "Convert the Currency" : "Scan the Currency")
                     .font(.title)
                     .fontWeight(.bold)
+                    .padding(.top, 20)
                 
                 Image(systemName: isConvertMode ? "repeat" : "scanner")
                     .resizable()
@@ -36,26 +37,28 @@ struct ContentView: View {
                 Spacer()
                 
                 // Container for Horizontal images (Buttons)
-                HStack {
-                    Image(systemName: "scanner")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.black)
-                        .contentShape(Rectangle())
-                        .onTapGesture { isConvertMode = false }
+                HStack(spacing: 30) {
+                    Button(action: { isConvertMode = false }) {
+                        Image(systemName: "scanner")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(isConvertMode ? .gray : .black)
+                    }
                     
-                    Image(systemName: "arrow.right.and.line.vertical.and.arrow.left")
-                        .mask(Rectangle().frame(width: 5, height: 50))
-                    
-                    Image(systemName: "repeat")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
+                    Rectangle()
+                        .frame(width: 5, height: 50)
                         .foregroundColor(.black)
-                        .contentShape(Rectangle())
-                        .onTapGesture { isConvertMode.toggle() }
+                    
+                    Button(action: { isConvertMode = true }) {
+                        Image(systemName: "repeat")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(isConvertMode ? .black : .gray)
+                    }
                 }
+                .padding(.bottom, 20)
                 
                 HStack {
                     Spacer()
@@ -73,6 +76,7 @@ struct ContentView: View {
         }
     }
 }
+
 #Preview {
     ContentView()
 }
