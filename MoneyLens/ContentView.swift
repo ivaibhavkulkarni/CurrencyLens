@@ -28,10 +28,23 @@ struct ContentView: View {
                 Spacer()
                 
                 // Main Container
+                // Show Camera Preview when in Scan Mode
                 if isConvertMode {
                     Text("Converter Container")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
                 } else {
-                    Text("Scanner Container")
+                    CameraView()
+                        .frame(height: 500)
+                        .cornerRadius(50)
+                        .padding(.horizontal)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 50)
+                                .stroke(Color.black, lineWidth: 2)
+                                .padding(.horizontal)
+                        )
                 }
                 
                 Spacer()
@@ -68,6 +81,7 @@ struct ContentView: View {
                         Image(systemName: "info.circle.fill")
                             .font(.largeTitle)
                             .foregroundStyle(.gray)
+                            .frame(height: 5)
                     }
                     .padding(.trailing)
                 }
