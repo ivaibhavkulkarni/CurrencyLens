@@ -20,4 +20,6 @@ optimizing real-time processing.
 
 <img width="1440" alt="Screenshot 2025-03-11 at 8 21 06 PM" src="https://github.com/user-attachments/assets/272c296d-a5c8-490a-aef2-9c66152c38c5" />
 
+<img width="300" alt="Screenshot 2025-03-11 at 9 45 30 AM" src="https://github.com/user-attachments/assets/b946db51-3573-45ac-a0d3-8c9c57b5da70" />
+
 <img width="300" alt="Screenshot 2025-03-11 at 9 45 30 AM" src="https://github.com/user-attachments/assets/cb2ed904-9207-4fe7-bd16-9f20a55600bb" />
